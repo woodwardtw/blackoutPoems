@@ -17,7 +17,7 @@ get_header(); ?>
 	  $length = count($originText);
 	  $i = 0;
 	  while ($i < $length) {
-	  	echo ' <button id="btn'. $i .'" class="buttonProps " onclick="blackOut(blackout'. $i .');highLight(btn'. $i .')">' . $originText[$i] .'</button>';
+	  	echo ' <button id="btn'. $i .'" class="buttonProps button" onclick="blackOut(blackout'. $i .');highLight(btn'. $i .')">' . $originText[$i] .'</button>';
 	  	$i++;
 	  }
 

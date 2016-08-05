@@ -19,32 +19,38 @@
 
 #blackout .black {
       padding: 3px;
-         font-size: 1.1em;
+      font-size: 1.1em;
       background-color: #000;
       display: inline-block;
       margin:0px;
       -webkit-clip-path: polygon(0 0, 97% 0, 100% 98%, 0 100%);
-        clip-path: polygon(0 0, 95% 0, 100% 96%, 0 100%);
-        margin-left: -5px;
-        color: #000;
+      clip-path: polygon(0 0, 95% 0, 100% 96%, 0 100%);
+      margin-left: -5px;
+      color: #000;
     }
 
-    #blackout .black div:nth-child(odd) { 
+#blackout .black div:nth-child(odd) { 
       -webkit-clip-path: polygon(0 0, 87% 0, 90% 97%, 0 93%);
         clip-path: polygon(0 0, 87% 0, 87% 97%, 0 93%);
       }
 
-      #origin .black {
-        background-color: yellow;
+#origin .black {
+      background-color: yellow;
+      color: #000;
+      border:none;
+      padding: none !important;
+      font-size: 1em;
+      font-variant: none;
       }
 
-      #origin .white {
+#origin .white {
       background-color: #fff;
       display: inline-block;
-      margin:0px;
+      padding: none;
+      font-size: 1.6em;
       }
 
-    #blackout .white {
+#blackout .white {
       padding: 3px;
       background-color: #fff;
       display: inline-block;
@@ -54,13 +60,16 @@
       padding:0px;
       font-size: 1.1em;
       padding: 3px;
+      color: #000;
     }
     
-    button {
+#origin .buttonProps, #origin button, button.button    {
       outline: none;
       background-color: #fff;
       border: none;
-      font-size: .6em;
       padding:0px;
       font-size: 1.1em;
+      color: #000 !important;
+      background-color: #fff;
+      text-transform: none !important;
     }
