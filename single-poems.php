@@ -9,9 +9,11 @@ get_header(); ?>
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
+   <h1 class="page-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 	<ul class="flex-container">
-	  <li class="flex-item" id="origin"><?php 
+	  <li class="flex-item" id="origin">
+	  <?php 
 
 	  $originText = explode(' ', get_the_content()); 
 	  $length = count($originText);
@@ -21,7 +23,9 @@ get_header(); ?>
 	  	$i++;
 	  }
 
-	  ?></li>
+	  ?>	  	
+	  </li>
+
 	  <li class="flex-item" id="blackout">
 	  <?php 
 
@@ -32,7 +36,6 @@ get_header(); ?>
 	  	echo ' <div class="black" id="blackout'. $i .'">' . $originText[$i] . '</div>';
 	  	$i++;
 	  }
-
 	  ?></li>	  
 	</ul>
 
@@ -56,10 +59,15 @@ get_header(); ?>
 			  else{
 			    div.className = "black";
 			  }
-			}		
+			}	
+		function grabIt (){
+		  var theDiv = document.getElementById('blackout');	
+		  console.log(theDiv);	  		  		 		         
+		}	
+
 	</script>
 
-				
+		<button onclick="grabIt()">grab it</button>		
 		<?php
 			// If comments are open or we have at least one comment, load up the comment template
 			if ( comments_open() || '0' != get_comments_number() )

@@ -47,7 +47,6 @@
       background-color: #fff;
       display: inline-block;
       padding: none;
-      font-size: 1.6em;
       }
 
 #blackout .white {
@@ -56,10 +55,12 @@
       display: inline-block;
       margin:0px;
       border: none;
-      font-size: .6em;
       padding:0px;
-      font-size: 1.1em;
-      padding: 3px;
+      font-size: 1em;
+      padding-left: 2px;
+      padding-right: 2px;
+      padding-top: 0px;
+      padding-bottom: 0px;
       color: #000;
     }
     
