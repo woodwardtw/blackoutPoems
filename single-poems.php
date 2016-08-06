@@ -36,38 +36,12 @@ get_header(); ?>
 	  	echo ' <div class="black" id="blackout'. $i .'">' . $originText[$i] . '</div>';
 	  	$i++;
 	  }
-	  ?></li>	  
+	  ?></li>	
 	</ul>
 
-	<script>
-	
-		function blackOut(div) {
-			  var className = div.getAttribute("class");
-			  if(className=="black") {
-			    div.className = "white";
-			  }
-			  else{
-			    div.className = "black";
-			  }
-			}	 
-		
-		function highLight(div) {
-			  var className = div.getAttribute("class");
-			  if(className=="black") {
-			    div.className = "white";
-			  }
-			  else{
-			    div.className = "black";
-			  }
-			}	
-		function grabIt (){
-		  var theDiv = document.getElementById('blackout');	
-		  console.log(theDiv);	  		  		 		         
-		}	
+		<button id="save_image_locally" >Download an Image</button>	
+	    <button onclick="grabIt();">Grab It</button>	  
 
-	</script>
-
-		<button onclick="grabIt()">grab it</button>		
 		<?php
 			// If comments are open or we have at least one comment, load up the comment template
 			if ( comments_open() || '0' != get_comments_number() )
