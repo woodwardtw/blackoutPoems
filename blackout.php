@@ -52,7 +52,7 @@ function custom_post_type_poem() {
 		'description'         => __( 'Poetic info', 'blackout' ),
 		'labels'              => $labels,
 		// Features this CPT supports in Post Editor
-		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', ),
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', 'page-attributes', ),
 		// You can associate this CPT with a taxonomy or custom taxonomy. 
 		'taxonomies'          => array( 'scene' ),
 		/* A hierarchical CPT is like Pages and can have

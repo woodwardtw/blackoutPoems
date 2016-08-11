@@ -11,36 +11,18 @@ get_header(); ?>
 
    <h1 class="page-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
-	<ul class="flex-container">
-	  <li class="flex-item" id="origin">
-	  <?php 
+   <?php if( $post->post_parent !== 0 ) {
+	    require_once( plugin_dir_path( __FILE__ ).'/templates/blackenedpoem.php'); 
 
-	  $originText = explode(' ', get_the_content()); 
-	  $length = count($originText);
-	  $i = 0;
-	  while ($i < $length) {
-	  	echo ' <button id="btn'. $i .'" class="buttonProps button" onclick="blackOut(blackout'. $i .');highLight(btn'. $i .')">' . $originText[$i] .'</button>';
-	  	$i++;
-	  }
+	} else {
+	    require_once( plugin_dir_path( __FILE__ ).'/templates/poems.php'); 	    
+	}; ?>
 
-	  ?>	  	
-	  </li>
-
-	  <li class="flex-item" id="blackout">
-	  <?php 
-
-	  $originText = explode(' ', get_the_content()); 
-	  $length = count($originText);
-	  $i = 0;
-	  while ($i < $length) {
-	  	echo ' <div class="black" id="blackout'. $i .'">' . $originText[$i] . '</div>';
-	  	$i++;
-	  }
-	  ?></li>	
-	</ul>
-
-		<button id="save_image_locally" >Download an Image</button>	
-	    <button onclick="grabIt();">Grab It</button>	  
+	<div class="child-poems-list">		
+	 <?php 
+	 $poemTitle ='<h3>Submitted Poems</h3>';
+	 $children = wp_list_pages('title_li='.$poemTitle.'&child_of='.get_the_ID().'&post_type=poems&echo=1'); ?>
+	 </div>
 
 		<?php
 			// If comments are open or we have at least one comment, load up the comment template

@@ -18,9 +18,24 @@ function highLight(div) {
 
 function grabIt() {
     var theDiv = document.getElementById('blackout');
-    console.log(theDiv);
+    var chosenWords = theDiv.getElementsByClassName('white');
+    var chosenLength = chosenWords.length;
+    var i = 0;
+    var thePoem = [];
+    var theString ='';
+    while (i < chosenLength) {
+    	 var plainText = chosenWords.item(i).innerHTML;
+    	 thePoem.push(plainText);      	
+    	 theString = theString + ' ' + plainText;
+    	 	if (i == 6 || chosenLength) {
+    	 		var theTitle = theString;
+    	 	}
+    	 console.log(thePoem);
+    	 console.log(theString);
+    	 console.log('the title -' + theTitle);
+    	i++;
+    };    
 }
-
 
 
 jQuery('#save_image_locally').click(function() {
